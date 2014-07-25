@@ -4,8 +4,8 @@
 int main() {
 	TIMSK |= (1<<TOIE2);
 	TCNT0 = 0;
-	ASSR = 0x08;
-	TCCR2 = 0x05;
+	ASSR |= (1<<AS2);
+	TCCR2 |= (1<<CS22)|(1<<CS20);
 	sei();
 	DDRD |= 0b1;
 	while(1);
